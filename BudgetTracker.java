@@ -11,6 +11,9 @@
  С фиксацией значений по курсу в точке расчёта.
   */
 
+
+import java.util.Scanner;
+
 public class BudgetTracker {
     int balance;
 
@@ -18,7 +21,32 @@ public class BudgetTracker {
         balance = 0;
     }
 
-    public void spend(int price, String item) {
+
+
+        /* what capabilities?
+
+            CRUD
+                where to store it?
+                    Database sqLite
+                how to store it in memory?
+                    object.  so we have BudgetTracker
+                                            it can do CRUD
+                                               and report
+
+                                we have also record class. which contains fields
+                                we have Database management class
+                hot wo transfer to DB?
+
+
+            report (different specifics)
+            adjust Currency converter
+
+         */
+
+    public static void addRecord(int price, String item, String type) {
+
+
+
         // здесь нужно внедрить какое-то хранилище. Временное может быть HashMaps. Но нужно учить DB кажется.
 
     }
@@ -26,9 +54,25 @@ public class BudgetTracker {
 
 
     public static void main(String[] args) {
-        BudgetTracker acc1 = new BudgetTracker();
+/*
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter bought item: ");
+        String item = input.nextLine();
+        System.out.println("Price? ");
+        int price = input.nextInt();
+        System.out.println("Type: ");
+        String type = input.nextLine();
 
-        acc1.spend(200, "Towel");
+        Record record = new Record("Towel", 200, "House");
+*/
+
+        DbConnection.connect();
+
+
+        // [DONE] connect SQLITE. OMG! I did it!
+        //    we are connected hooray
+
+        // learn how to store. And how DBPC works.
 
         // итого, для начала нужно подтянуть DB, чтобы хотя бы записывать значения
         // далее можно будет сделать конвертер валюты
